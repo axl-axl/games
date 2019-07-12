@@ -1,0 +1,110 @@
+.app{
+  width: 1000px;
+  margin: 50px auto;
+  background: #f2f2f2;
+  padding: 50px;
+}
+div {
+  margin: 0 auto;
+  padding: 0;
+}
+.title {
+  text-align: center;
+  color: red;
+  margin: 0;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  .square {
+    &::before {
+      top: 50%;
+      height: 50%;
+    }
+    &:first-child, &:last-child {
+      &:after {
+        width: 50%;
+      }
+    }
+    &:first-child {
+      &:after {
+        left: 50%;
+      }
+    }
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  .square {
+    &::before {
+      top: 0%;
+      height: 50%;
+    }
+    &:first-child, &:last-child {
+      &:after {
+        width: 50%;
+      }
+    }
+    &:first-child {
+      &:after {
+        left: 50%;
+      }
+    }
+  }
+}
+.Chessboard {
+  display: grid;
+  grid-area: 1fr / 1fr
+}
+.chessboardRow {
+  display: flex;
+  flex-direction: row;
+  .square {
+    &:first-child, &:last-child {
+      &:after {
+        width: 50%;
+      }
+    }
+    &:first-child {
+      &:after {
+        left: 50%;
+      }
+    }
+  }
+}
+.square {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  cursor: pointer;
+  &:after, &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  &:after {
+    left: 0;
+    top: 50%;
+    border-top: 1px solid #000;
+  }
+  &:before {
+    left: 50%;
+    top: 0;
+    border-left: 1px solid #000;
+  }
+  .chessk{
+    width: 40%;
+    height: 40%;
+    border: 1px solid #222;
+    border-radius: 100%;
+    box-shadow: 0 0 5px rgb(65, 64, 64);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}
